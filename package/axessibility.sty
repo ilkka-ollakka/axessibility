@@ -397,7 +397,7 @@ require("axessibility.lua")
 
 \makeatletter
 \long\def\wrap#1{
-\BeginAccSupp{method=escape,ActualText=\detokenize\expandafter{#1}}
+\BeginAccSupp{method=escape,Lang=\auxiliaryspace(en-US),ActualText=\detokenize\expandafter{#1}}
  #1
 \EndAccSupp{}%
 }
@@ -410,7 +410,7 @@ require("axessibility.lua")
 \def\@mltexttmp{}
 \StrBehind[5]{\@mltext}{ }[\@mltexttmp]
 \StrGobbleRight{\@mltexttmp}{1}[\@mltext]
-\BeginAccSupp{method=escape,ActualText=\auxiliaryspace\@mltext}
+\BeginAccSupp{method=escape,Lang=\auxiliaryspace(en-US),ActualText=\auxiliaryspace\@mltext}
  #1
 \EndAccSupp{}%
 }

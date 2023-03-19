@@ -345,6 +345,13 @@ require("axessibility.lua")
 
 \RequirePackage{accsupp}
 
+\makeatletter
+\@ifpackageloaded{hyperref}
+{
+ \RequirePackage{hyperxmp}
+}{}
+\makeatother
+
 
 \pdfcompresslevel=0
 \pdfoptionpdfminorversion=6
@@ -368,6 +375,13 @@ require("axessibility.lua")
     \edef\ACCSUPP@span{%
       /S/Span<<%
         \ifx\ACCSUPP@Lang\relax
+         \ifx\@pdflang\@undefined
+         \else
+          \ifx\@pdflang\relax
+          \else
+           /Lang(\@pdflang)
+          \fi
+         \fi
         \else
           /Lang\ACCSUPP@Lang
         \fi
